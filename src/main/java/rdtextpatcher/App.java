@@ -52,7 +52,7 @@ public class App extends Application {
             if(f.exists() && !f.isDirectory()) {
                 installPatch("data/RDLocalization.json", false);
             }else {
-                resultField.setText("Rhythm Doctorのデータが見つかりませんでした。");
+                resultField.setText("Could not find Rhythm Doctor files.");
             }
         }
     }
@@ -64,7 +64,7 @@ public class App extends Application {
             if(f.exists() && !f.isDirectory()) {
                 installPatch("data/original/RDLocalization.json", true);
             }else {
-                resultField.setText("Rhythm Doctorのデータが見つかりませんでした。");
+                resultField.setText("Could not find Rhythm Doctor files.");
             }
         }
     }
@@ -80,7 +80,7 @@ public class App extends Application {
                 if (!originalFile.exists()) Files.createDirectory(Paths.get("data/original"));
                 if (!cacheFile.exists()) Files.createDirectory(Paths.get("data/cache"));
 
-                resultField.setText("言語ファイルを展開中…");
+                resultField.setText("Extracting language files...");
 
                 AssetFile assetFile = new AssetFile(Paths.get("Rhythm Doctor_Data/resources.assets"));
                 assetFile.parse();
@@ -96,7 +96,7 @@ public class App extends Application {
                 UnityIndex uIndex = indexFromName("RDLocalization", allAssets);
                 UnityAsset asset = allAssets.get(uIndex);
 
-                resultField.setText("インデックスを作成中…");
+                resultField.setText("Creating index...");
 
                 String s = new String(asset.asTextContent(), StandardCharsets.UTF_8);
                 String content = s.substring(s.indexOf('\n')+1);
@@ -191,7 +191,7 @@ public class App extends Application {
                     }
                 }
 
-                resultField.setText("テキストを置き換え中…");
+                resultField.setText("Replacing texts...");
 
                 Set<String> dataEntries = dataJson.keySet();
                 for (String key: dataEntries) {
@@ -357,10 +357,10 @@ public class App extends Application {
                 assetFile.updateOffsetsAndSize();
                 assetFile.save(Paths.get("Rhythm Doctor_Data/resources.assets"));
 
-                if (uninstall) resultField.setText("日本語化パッチを取り消しました。");
-                else resultField.setText("パッチの適応が正常に完了しました。");
+                if (uninstall) resultField.setText("Patch has successfully been reverted.");
+                else resultField.setText("Patch has successfully been applied.");
             }catch (Exception e) {
-                resultField.setText("パッチの適応中にエラーが発生しました。");
+                resultField.setText("An error has occurred while patching.");
                 e.printStackTrace();
             }
             working = false;
