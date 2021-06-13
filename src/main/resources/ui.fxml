@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rdtextpatcher.App">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="0.0" prefWidth="0.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Created by KabanFriends" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+            <GridPane.margin>
+                <Insets right="50.0" />
+            </GridPane.margin>
+        </Label>
+        <Label text="RDTextPatcher" textAlignment="CENTER" GridPane.halignment="CENTER">
+            <font>
+                <Font name="Comic Sans MS" size="36.0" />
+            </font>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#clickInstall" text="日本語化を適応" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="10.0" />
+            </GridPane.margin>
+        </Button>
+        <Label text="ゲーム内のメニューや文章等を日本語化する" textAlignment="RIGHT" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+            <GridPane.margin>
+                <Insets right="10.0" />
+            </GridPane.margin>
+      </Label>
+      <GridPane prefHeight="50.0" prefWidth="600.0" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="0.0" prefWidth="0.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="8.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+              <Button onAction="#clickUninstall" mnemonicParsing="false" text="日本語化を取消" GridPane.halignment="LEFT">
+                  <GridPane.margin>
+                      <Insets left="10.0" />
+                  </GridPane.margin>
+              </Button>
+              <Label text="パッチ適応前の状態へ戻す" textAlignment="RIGHT" GridPane.halignment="RIGHT">
+                  <GridPane.margin>
+                      <Insets right="10.0" />
+                  </GridPane.margin>
+              </Label>
+            <TextField fx:id="resultField" editable="false" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+         </children>
+      </GridPane>
+    </children>
+</GridPane>
