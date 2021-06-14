@@ -48,7 +48,7 @@ public class App extends Application {
     @FXML
     public void clickInstall(ActionEvent event) {
         if (!working) {
-            File f = new File("Rhythm Doctor_Data/resources.assets");
+            File f = new File("Rhythm Doctor_Data/resources.assets").getAbsoluteFile();
             if(f.exists() && !f.isDirectory()) {
                 installPatch("data/RDLocalization.json", false);
             }else {
@@ -60,7 +60,7 @@ public class App extends Application {
     @FXML
     public void clickUninstall(ActionEvent event) {
         if (!working) {
-            File f = new File("Rhythm Doctor_Data/resources.assets");
+            File f = new File("Rhythm Doctor_Data/resources.assets").getAbsoluteFile();
             if(f.exists() && !f.isDirectory()) {
                 installPatch("data/original/RDLocalization.json", true);
             }else {
@@ -73,9 +73,9 @@ public class App extends Application {
         working = true;
         new Thread(() -> {
             try {
-                File dataFile = new File("data");
-                File originalFile = new File("data/original");
-                File cacheFile = new File("data/cache");
+                File dataFile = new File("data").getAbsoluteFile();
+                File originalFile = new File("data/original").getAbsoluteFile();
+                File cacheFile = new File("data/cache").getAbsoluteFile();
                 if (!dataFile.exists()) Files.createDirectory(Paths.get("data"));
                 if (!originalFile.exists()) Files.createDirectory(Paths.get("data/original"));
                 if (!cacheFile.exists()) Files.createDirectory(Paths.get("data/cache"));
@@ -148,7 +148,7 @@ public class App extends Application {
                     }
                 }
 
-                File f = new File("data/original/RDLocalization.json");
+                File f = new File("data/original/RDLocalization.json").getAbsoluteFile();
                 if (!f.exists() && !f.isDirectory()) {
                     Writer writer = Files.newBufferedWriter(Paths.get("data/original/RDLocalization.json"));
                     gson.toJson(outJson, writer);
@@ -183,7 +183,7 @@ public class App extends Application {
                             }
                         }
                     }
-                    File f2 = new File("data/original/" + getDiaJsonName(as.getTextName()));
+                    File f2 = new File("data/original/" + getDiaJsonName(as.getTextName())).getAbsoluteFile();
                     if (!f2.exists() && !f2.isDirectory()) {
                         Writer writer = Files.newBufferedWriter(Paths.get("data/original/" + getDiaJsonName(as.getTextName())));
                         gson.toJson(diaOutJson, writer);
@@ -217,7 +217,7 @@ public class App extends Application {
                     JsonElement diaElement = JsonParser.parseString(new String(as.asTextContent(), StandardCharsets.UTF_8));
                     JsonObject diaJson = diaElement.getAsJsonObject();
 
-                    File cacheJsonFile = new File(cacheFName);
+                    File cacheJsonFile = new File(cacheFName).getAbsoluteFile();
                     if (cacheJsonFile.exists() || cacheJsonFile.isFile()) {
                         FileCharDetector fd2 = new FileCharDetector(cacheFName);
 
@@ -280,7 +280,7 @@ public class App extends Application {
                         as.replaceTextContent(newContent2);
                     }
 
-                    File jsonFile = new File(fName);
+                    File jsonFile = new File(fName).getAbsoluteFile();
                     if (jsonFile.exists() || jsonFile.isFile()) {
                         FileCharDetector fd2 = new FileCharDetector(fName);
 
