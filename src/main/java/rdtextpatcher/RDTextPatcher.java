@@ -202,8 +202,10 @@ public class RDTextPatcher extends Application {
                 }
                 String finalJsonString = "Japanese Translation - Patched with RDTextPatcher\n" + gson.toJson(rdlJson);
                 System.out.println(finalJsonString);
-                finalJsonString = finalJsonString.replaceAll("\\\\\\\\([0-9a-fnru])", "\\\\$1");
+                finalJsonString = finalJsonString.replaceAll("\\\\([\\\\\"])", "$1");
                 System.out.println(finalJsonString);
+                finalJsonString = finalJsonString.replaceAll("\\\\\\\\([0-9a-fnru])", "\\\\$1");
+                //System.out.println(finalJsonString);
                 byte[] newContent = finalJsonString.getBytes(StandardCharsets.UTF_8);
                 asset.replaceTextContent(newContent);
 
