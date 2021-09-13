@@ -25,7 +25,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class App extends Application {
+public class RDTextPatcher extends Application {
 
     public boolean working = false;
 
