@@ -68,9 +68,7 @@
     <build>
         <resources>
             <resource>
-                <directory>${basedir}/src/main/java/foo/baa/view</directory>
-                <filtering>false</filtering>
-                <targetPath>foo/baa/view</targetPath>
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <plugins>
