@@ -26,12 +26,12 @@
                 <Font name="Comic Sans MS" size="36.0" />
             </font>
         </Label>
-        <Button mnemonicParsing="false" onAction="#clickInstall" text="Apply Patch" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#clickInstall" text="日本語化を適応" GridPane.halignment="LEFT" GridPane.rowIndex="1">
             <GridPane.margin>
                 <Insets left="10.0" />
             </GridPane.margin>
         </Button>
-        <Label text="Applies the translation patch." textAlignment="RIGHT" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+        <Label text="ゲーム内のメニューや文章等を日本語化する" textAlignment="RIGHT" wrapText="true" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
             <GridPane.margin>
                 <Insets right="10.0" />
             </GridPane.margin>
@@ -47,12 +47,12 @@
           <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-              <Button onAction="#clickUninstall" mnemonicParsing="false" text="Remove Patch" GridPane.halignment="LEFT">
+              <Button onAction="#clickUninstall" mnemonicParsing="false" text="日本語化を取消" GridPane.halignment="LEFT">
                   <GridPane.margin>
                       <Insets left="10.0" />
                   </GridPane.margin>
               </Button>
-              <Label text="Reverts the translated texts." textAlignment="RIGHT" GridPane.halignment="RIGHT">
+              <Label text="パッチ適応前の状態へ戻す" textAlignment="RIGHT" GridPane.halignment="RIGHT">
                   <GridPane.margin>
                       <Insets right="10.0" />
                   </GridPane.margin>
